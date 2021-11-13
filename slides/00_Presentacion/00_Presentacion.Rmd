@@ -200,6 +200,17 @@ class: inverse, center, middle
 
 ---
 
+class: center, middle
+
+## AGRADECER A : 
+
+
+<img src='img/circulos-unalm.png' width='80%' height='80%' class='centerimage'>
+
+
+
+---
+
 class: inverse, center, middle
 
 # GRACIAS! <br/>  <a href="mailto: marvinjqs@gmail.com"> <img alt="gmail" src="../img/gmail-logo.gif" width='20%' height='50%'> </a> 
