@@ -25,7 +25,7 @@ layout: true
   
 <div class="my-footer">
 <span>
-<a href="https://github.com/marvinjonathcn/" target="_blank"> Análisis de calidad de aire con R
+<a href="https://github.com/marvinjonathcn/taller_R_aire" target="_blank"> Análisis de datos de calidad de aire con R
 </a>
 </span>
 </div> 
