@@ -4,7 +4,7 @@
   </a>
   <br /><br />
   ANÁLISIS DE DATOS DE CALIDAD DE AIRE CON R Y RSTUDIO </h2>
-<p align="center">Taller: Centro de Estudiantes de Ing. Ambiental (CEIA) - UNALM - 2021</p>
+<p align="center">Taller: Centro de Estudiantes de Ing. Ambiental (CEIA) - CI INGETCAR - UNALM - 2021</p>
 <div align="center"><a href="https://www.linkedin.com/in/marvinjqs/"><img alt="@marvinjonathcn" 
 src="https://img.shields.io/badge/Autor-Marvin%20J.%20Quispe-lightgrey" /></a>
 <a href="https://opensource.org/licenses/MIT/"><img alt="Licencia MIT" 
@@ -22,6 +22,12 @@ R es un entorno y lenguaje de programación con un enfoque al análisis estadís
 |:--------------------    |:--------------| :--------------|
 | Marvin j. Quispe Sedano | [@marvinjonathcn](https://github.com/marvinjonathcn)| marvinjqs@gmail.com |
 
+### ORGANIZADORES
+
+| Nombre                  | Webpage        |  
+|:--------------------    |:--------------| 
+| Centro de Estudiantes de Ingeniería Ambiental - UNALM | [@CEIA-UNALM](https://www.facebook.com/ingamunalm)
+| Círculo de Investigación en Ingeniería, Gestión y Tecnológia en Calidad de Aire y Ruido| [@CI INGETCAR-UNALM](https://www.facebook.com/ingetcar)
 
 ### TEMARIO
 
