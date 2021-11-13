@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Análisis de datos de calidad de aire con R Y RStudio</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Environmental Data Scientist      " />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../my-theme.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Análisis de datos de calidad de aire con R Y RStudio
+## <br/> Marvin J. Quispe Sedano
+### Environmental Data Scientist <br/><br/> <img src='../img/gif-logods.png' alt='envids' width='100' height='100'> <br/>
+### Lima, 2021
+
+---
+
+
+
+
+
+layout: true
+  
+&lt;div class="my-footer"&gt;
+&lt;span&gt;
+&lt;a href="https://github.com/marvinjonathcn/" target="_blank"&gt; Análisis de calidad de aire con R
+&lt;/a&gt;
+&lt;/span&gt;
+&lt;/div&gt; 
+
+---
+
+
+class: center
+
+## Acerca de mí
+
+.left-column-image[
+  &lt;img src='img/marvin-github.png' alt='marvin-profile' width='240' height='430' class='center'&gt;
+]
+
+.left-column[
+- Ingeniería ambiental / UNALM.
+- Especialización en Data Science, Machine Learning y Deep Learning / UNALM.
+- Consultor en ciencia de datos ambientales en el Centro Internacional de la Papa (CIP - CGIAR) en el área de Research Informatics Unit (RIU) y Asistente de recursos hídricos en SNC-Lavalin.
+- Docente con más de 300 horas de experiencia en el dictado de cursos de Sistemas de Información Geográfica con ArcGIS, QGIS, Google Earth Engine, R y Python.
+ ]
+
+---
+
+## ¿Qué es la calidad de aire?
+
+- Se puede definir la calidad de aire como la condición del aire dentro de un espacio-tiempo determinados. 
+- Una buena calidad de aire denota un entorno donde el aire es limpio, mientras que una mala calidad de aire se debe a la presencia de altas concentraciones de contaminantes atmosféricos.
+- Según la Organización Mundial de la Salud (OMS), 9 de cada 10 personas en todo el mundo viven en lugares donde la calidad del aire supera los límites establecidos en la guía de calidad de aire de la OMS. 
+- La calidad de aire se mide mediante el Indice de Calidad de Aire.
+
+
+&lt;img src='img/airq01.png' width='70%' height='70%' class='centerimage'&gt;
+
+
+---
+
+## Los contaminantes atmosféricos
+
+- Son las partículas o gases presentes en el aire que implican riesgos a la salud o el ambiente en concentraciones elevadas.
+- La Agencia de Protección Ambiental de EEUU (EPA), ha definido seis contaminantes atmosféricos con la categoría de "criterio" basados en su interacción y efectos sobre la salud humana y ambiente.
+- Los contaminantes atmosféricos criterio son el **Material particulado (PM), Ozono (O3), Monóxido de carbono (CO), Óxidos de azufre (SOx), Óxidos de Nitrógeno (NOx) y plomo (Pb)**.
+
+&lt;img src='img/conta-atm.png' width='60%' height='60%' class='centerimage'&gt;
+
+
+---
+
+## La contaminación atmosférica
+
+&lt;img src='img/airq02.png' width='80%' height='80%' class='centerimage'&gt;
+
+---
+
+## Monitoreo de la calidad del aire
+
+&lt;img src='img/monitoreo-aire.png' width='70%' height='70%' class='centerimage'&gt;
+
+
+---
+
+## ¿Qué es la programación?
+
+- La programación es el proceso utilizado para idear y ordenar las acciones necesarias para realizar un proyecto de manera eficiente.
+- En la actualidad el concepto se encuentra muy ligado a la informática.
+
+
+&lt;img src='img/def-programar.png' width='70%' height='70%' class='centerimage'&gt;
+
+---
+
+## ¿Por qué aprender a programar?
+
+- El mundo tecnológico se encuentra en constante crecimiento.
+- La programación estimula el pensamiento lógico y crítico, la creatividad, la colaboración efectiva, el análisis sitemático y aprendizaje continuo.
+- Los campos de aplicación de la programación son muy diversos.
+- La pandemia por el COVID-19 ha cambiado el mundo laboral, posiblemente para siempre.
+
+
+  &lt;img src='img/imp-programacion.png' width='60%' height='60%' class='centerimage'&gt;
+
+
+---
+
+## ¿Por qué aprender R?
+
+  &lt;img src='img/googletrend.png' width='100%' height='100%' class='centerimage'&gt;
+
+ &lt;a href="https://trends.google.com/" class='center'&gt; Acceder a Google Trends &lt;/a&gt;
+
+---
+
+class: syllabus
+
+## Contenido analítico
+
+#### PARTE I: INTRODUCCIÓN A LA PROGRAMACIÓN CON R Y RSTUDIO 
+
+**INTRODUCCIÓN A R**
+
+-	¿Qué es R?
+-	Características principales de R
+-	¿Qué es RStudio?
+-	Características principales de RStudio
+-	Instalación de R y RStudio
+-	Paquetes y sintaxis 
+
+**MATEMÁTICAS BÁSICAS CON R**
+
+-	Operaciones y funciones básicas
+-	Cifras significativas y redondeo
+-	Números reales y complejos
+
+---
+
+class: syllabus
+
+**DATOS Y FUNCIONES EN R**
+
+-	Tipos de datos
+-	Estructura de datos
+-	Importar y exportar datos
+-	Horarios y fechas
+-	Operadores relacionales y lógicos
+-	Condicionales: if, else y else if
+-	Loops
+-	Funciones
+
+---
+
+class: syllabus
+
+#### PARTE II: ANÁLISIS DE DATOS METEOROLÓGICOS Y CALIDAD DE AIRE 
+
+-	¿Qué es la calidad de aire?
+-	¿Qué es la contaminación atmosférica?
+-	Tipos de contaminantes atmosféricos
+-	Fuentes de contaminantes atmosféricos
+-	Efectos de los contaminantes atmosféricos
+-	La meteorología y la calidad de aire
+-	Monitoreo de la calidad del aire
+-	Obtención, procesamiento y análisis de datos meteorológicos
+-	Obtención, procesamiento y análisis de datos de calidad de aire
+-	Uso de la librería “openair”
+-	Gráficos de series de tiempo	
+-	Gráfico de rosas de viento y contaminación
+-	Gráficos de calendario y tendencias
+
+
+---
+
+## Sistema de evaluación
+
+- Trabajos encargados  &amp;nbsp;  &amp;nbsp;| ??%
+- Examen teórico &amp;nbsp;  &amp;nbsp;  &amp;nbsp;  &amp;nbsp;  &amp;nbsp;  &amp;nbsp;  &amp;nbsp; | 100%
+- Proyecto final &amp;nbsp;  &amp;nbsp;  &amp;nbsp;  &amp;nbsp;  &amp;nbsp;  &amp;nbsp;  &amp;nbsp;  &amp;nbsp;  &amp;nbsp;| ??% 
+
+&lt;br/&gt;
+
+&lt;img src='img/exam.gif' alt='exam' width='55%' height='55%' class='center'&gt;
+
+---
+
+class: inverse, center, middle
+
+# INVESTIGACIÓN REPRODUCIBLE
+
+---
+
+## Git y GitHub
+
+- [Git](https://git-scm.com/) es el sistema de control de versiones más utilizado en el mundo.
+- [GitHub](https://github.com/) es una plataforma para alojar proyectos Git.
+
+&lt;img src='img/git.png' alt='git-y-github' width='100%' height='100%' class='center'&gt;
+
+---
+
+## RMarkdown
+
+- [RMarkdown](https://rmarkdown.rstudio.com/) integra paquetes de R y herramientas externas con la finalidad de proveer un marco de referencia para la construcción de documentación completamente reproducible.
+
+&lt;img src='img/rmark-gif.gif' alt='rmarkdown' width='95%' height='950%' class='center'&gt;
+
+---
+
+class: inverse, center, middle
+
+# GRACIAS! &lt;br/&gt;  &lt;a href="mailto: marvinjqs@gmail.com"&gt; &lt;img alt="gmail" src="../img/gmail-logo.gif" width='20%' height='50%'&gt; &lt;/a&gt; 
+
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightLines": true,
+"highlightStyle": "solarized-dark",
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
