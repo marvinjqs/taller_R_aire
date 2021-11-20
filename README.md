@@ -95,4 +95,7 @@ R es un entorno y lenguaje de programación con un enfoque al análisis estadís
 | &nbsp;  &nbsp;  &nbsp;  &nbsp;• Secuencias de horarios y fechas |
 | &nbsp;  &nbsp;  &nbsp;  &nbsp;• Clase "POSIXct" y "POSIXlt" |
 
+| 🌏 CLASE 6: [ANÁLISIS DE DATOS METEOROLÓGICOS Y CALIDAD DE AIRE](https://marvinjonathcn.github.io/taller_R_aire/slides/06_Calidad_de_aire/06_Calidad_de_aire.html)  &nbsp;  |
+|:---------------------------------------------------------------|
+
 
