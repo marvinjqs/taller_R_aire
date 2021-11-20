@@ -24,275 +24,55 @@ output:
 ```
 class: inverse, center, middle
 
-## CLASE 3 
-### LOS OPERADORES Y DECLARACIONES EN R
+## CLASE 6 
+### ANÁLISIS DE DATOS METEOROLÓGICOS Y CALIDAD DE AIRE
 
 ---
 
 ## Introducción
 
-- Los operadores son símbolos que nos permiten realizar una tarea en específico.
-- Las estructuras de control o declaraciones nos permiten facilitar y tener un control sobre la manera en que se ejecutan nuestros bloques de código.
+- La contaminación del aire representa un importante riesgo medioambiental para la salud. Mediante la disminución de los niveles de contaminación del aire los países pueden reducir la carga de morbilidad derivada de accidentes cerebrovasculares, cánceres de pulmón y neumopatías crónicas y agudas, entre ellas el asma (OMS, 2021).
 
 
-<img src='img/loops-picture.png' width='25%' height='25%' class='centerimage'>
-
----
-
-class: inverse, center, middle
-
-## OPERADORES
+<img src='img/calidad-aire.png' width='70%' height='70%' class='centerimage'>
 
 
 ---
 
-## Operadores aritméticos
+## Monitoreo de la calidad de aire
 
-- Los operadores aritméticos se utilizan con valores numéricos para realizar operaciones matemáticas comunes.
-- En R, cualquier operación aritmeética que contenga **NA** devolverá **NA** como resultado.
+- El monitoreo de la calidad del aire es la evaluación sistemática de los tipos y cantidades de los contaminantes presentes en el entorno (exterior o interior).
+- Su finalidad es la obtención de datos de buena calidad para su posterior procesamiento y análisis.
 
-Operador | Operación | Ejemplo 
------------- | ------------ | ------------
-+ | Suma | 5+6
-- | Resta | 10-4
-* | Multiplicación | 20*3
-/ | División | 10/2
-^ | Potencia | 4^2
-%% | División entera | 5%%2
+<img src='img/monitoreo-aire.png' width='70%' height='70%' class='centerimage'>
+
+---
+
+## Protocolo de monitoreo de la calidad del aire
+
+<img src='img/protocolo-img.png' width='100%' height='100%' class='centerimage'>
 
 
 ---
 
-## Operadores relacionales 
+## Zonas priorizadas
 
-- Los operadores relacionales sirven para comparar o establecer una relación entre objetos, devolviendo un resultado booleano (True o False) según el comparativo realizado.
-- Las relaciones entre objetos de tipo "character" se dan en base al orden alfabético.
-- Las relaciones entre objetos de tipo "factor" siempre devuelven **NA**.
-
-Operador | Comparación | Ejemplo
------------- | ------------ | ------------
-< | Menor que | 3 < 5
-<= | Menor o igual que | 2 <= 7
-> | Mayor que | 4 > 10
->= | Mayor o igual que | 11 >= 7
-== | Exactamente igual que | 5 == 3
-!= | No es igual que | 5 != 3
+<img src='img/estaciones.png' width='100%' height='100%' class='centerimage'>
 
 ---
 
-## Operadores lógicos
+## Parámetros priorizados
 
-- Los operadores lógicos nos permiten hacer comparativos entre valores de tipo booleano (True o False).
-- En las operaciones lógicas todo valor distinto a **0** es coercionado a **TRUE**.
-
-Operador | Comparación | Ejemplo
------------- | ------------ | ------------
-x l y | x **o** y es verdadero | TRUE l FALSE
-z & w | z **y** w son verdaderos | TRUE & FALSE
-!x | x no es verdadero (negación) | !FALSE
-isTRUE(x) | x es verdadero (afirmación) | isTRUE(FALSE)
+<img src='img/prior1.png' width='90%' height='90%' class='centerimage'>
 
 ---
 
-## Operadores de asignación 
+## Parámetros priorizados
 
-- Los operadores de asignación nos permiten asignar valores a los objetos.
-- En R, si asignamos un valor a un objeto que ya había sido creado anteriormente, se sobreescribe y conserva el valor más reciente.
-
-Operador | Definición | Ejemplo
------------- | ------------ | ------------
-<- | Asigna un valor a una variable | y <- 5.6
-= | Asigna un valor a una variable | z = "UNALM"
+<img src='img/prior2.png' width='90%' height='90%' class='centerimage'>
 
 ---
 
-class: inverse, center, middle
-
-## INTRUCCIONES DE CONTROL O DECLARACIONES
-
----
-
-## Instrucción "if"
-
-- La instrucción "if" nos permite ejecutar un bloque de código si se cumple con determinada condición.
-
-```{r , echo = TRUE , collapse = TRUE}
-
-# CREAMOS UN OBJETO PARA LA APLICACION DE LA INSTRUCCION
-
-x <- 10
-
-if (x>5) {
-  print("La operación se realizó con éxito")
-  print("El número es mayor que 5")
-}
-
-```
-
----
-
-## Instrucción "else"
-
-- La instrucción "else" nos permite ejecutar un bloque de código cuando no se cumple con la condición evaluada por la instrucción "if". 
-
-```{r , echo = TRUE , collapse = TRUE}
-
-# CREAMOS UN OBJETO PARA LA APLICACION DE LA INSTRUCCION
-
-x <- 4
-
-if (x>5) {
-  print("La operación se realizó con éxito")
-  print("El número es mayor que 5")
-} else{
-  print("La operación no se realizó")
-  print("El número es menor o igual que 5")
-}
-
-```
-
----
-
-## Instrucción "else if"
-
-- La instrucción "else if" nos permite ejecutar un bloque de código cuando no se cumple con la condición evaluada por la instrucción "if" y se necesite más de una instrucción. 
-
-```{r , echo = TRUE , collapse = TRUE}
-
-# CREAMOS UN OBJETO PARA LA APLICACION DE LA INSTRUCCION
-
-x <- 5
-
-if (x > 5) {
-  print("La operación se realizó con éxito")
-  print("El número es mayor que 5")
-} else if (x == 5) {
-  print("La operación no se realizó")
-  print("El número es igual a 5")
-} else {
-  print("La operación no se realizó")
-  print("El número es menor o igual que 5") 
-}
-
-```
-
----
-
-## Instrucción "ifelse"
-
-- La instrucción "ifelse" nos permite evaluar de manera rápida si contamos con solo una instrucción para "if" y una instrucción para "else".
-
-```{r , echo = TRUE , collapse = TRUE}
-
-# CREAMOS UN OBJETO PARA LA APLICACION DE LA INSTRUCCION
-
-x <- 5
-
-ifelse(x > 5, "El número es mayor que 5", "El número es menor o igual que 5")
-
-```
-
----
-
-## Instrucción "for"
-
-- Los Loops o "bucles" son la manera de repetir alguna función o líneas de código, mientras se cumplan determinadas condiciones.
-- La instrucción "for" es útil para repetir un procedimiento cierta cantidad de veces.
-
-```{r , echo = TRUE , collapse = TRUE}
-
-# CREAMOS UN OBJETO PARA LA APLICACION DE LA INSTRUCCION
-
-x <- c(20,15,17,18,20,25,26,29)
-
-# CREAMOS UN VECTOR VACIO
-
-vector <- c()
-
-for (i in 1:length(x)) {
-  z <- x[i]*2
-  vector[i] <- z + i
-}
-
-print(vector)
-
-```
-
----
-
-## Instrucción "while"
-
-- La instrucción "while" es muy útil para repetir un procedimiento siempre que se cumple una condición.
-
-```{r , echo = TRUE , collapse = TRUE}
-
-# CREAMOS UN OBJETO PARA LA APLICACION DE LA INSTRUCCION
-
-x <- 1
-
-while (x < 10) {
-  print(x)
-  x <- x + 1
-
-}
-
-```
-
----
-
-## Instrucción "repeat"
-
-- La instrucción "repeat" es muy útil para repetir un procedimiento, usando un "break" para detenerse.
-
-```{r , echo = TRUE , collapse = TRUE}
-
-# CREAMOS UN OBJETO PARA LA APLICACION DE LA INSTRUCCION
-
-x <- 0
-
-repeat {
-  x <- x + 1
-  if(x == 10) {
-    break
-  }
-}
-
-print(x)
-
-```
-
----
-
-## Instrucción "break"
-
-- La instrucción "break" nos permite interrumpir un bucle al cumplir determinada condición.
-
-```{r , echo = TRUE , collapse = TRUE}
-
-# CREAMOS UN OBJETO PARA LA APLICACION DE LA INSTRUCCION
-
-x <- c(20,15,17,18,20,25,26,29)
-
-# CREAMOS UN VECTOR VACIO
-
-vector <- c()
-
-for (i in 1:length(x)) {
-  
-  if (i == 4){
-    break
-    }
-  
-  z <- x[i]*2
-  vector[i] <- z + i
-
-}
-
-print(vector)
-
-```
-
----
 
 
 ## Instrucción "next"
