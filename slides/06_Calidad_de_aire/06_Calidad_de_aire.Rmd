@@ -107,25 +107,25 @@ class: inverse, center, middle
 
 ## Limpieza de datos
 
-<img src='img/qc1.png' width='90%' height='90%' class='centerimage'>
+<img src='img/qc1.PNG' width='90%' height='90%' class='centerimage'>
 
 ---
 
 ## Cálculos aritméticos
 
-<img src='img/qc2.png' width='90%' height='90%' class='centerimage'>
+<img src='img/qc2.PNG' width='90%' height='90%' class='centerimage'>
 
 ---
 
 ## Cálculos aritméticos
 
-<img src='img/qc3.png' width='90%' height='90%' class='centerimage'>
+<img src='img/qc3.PNG' width='90%' height='90%' class='centerimage'>
 
 ---
 
 ## Cálculos aritméticos
 
-<img src='img/qc4.png' width='90%' height='90%' class='centerimage'>
+<img src='img/qc4.PNG' width='90%' height='90%' class='centerimage'>
 
 
 ---
