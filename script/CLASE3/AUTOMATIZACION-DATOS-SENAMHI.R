@@ -209,11 +209,9 @@ df <- df[!(df$VEL_V %in% out_VEL_V),]
 
 # Obtener los promedios, maximos, minimos, etc
 
-df$date_d <- format(date, "%d/%m/%Y")
-PP_acum_d <- aggregate(PP ~ date_d, df, sum)
-
-df$date_m <- format(date, "%m/%Y")
-PP_acum_m <- aggregate(PP ~ date_m, df, sum)
+data_month <- setDT(df)[,lapply(.SD, function(x) if(length(na.omit(x)) >= 23)
+  (wd_mean(x)) else NA_real_) ,
+  by = .(month = format(day, '%m/%Y'))]
 
 # ETC
 
