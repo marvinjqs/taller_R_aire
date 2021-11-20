@@ -57,6 +57,8 @@ class: inverse, center, middle
 
 ## Zonas priorizadas
 
+- El Ministerio del Ambiente ha priorizado 31 zonas para poner en marcha «Planes de Acción para la mejora de la Calidad del Aire», con medidas para controlar las emisiones contaminantes, proteger la salud de las personas y la calidad del ambiente.
+
 <img src='img/estaciones.png' width='100%' height='100%' class='centerimage'>
 
 ---
@@ -73,37 +75,68 @@ class: inverse, center, middle
 
 ---
 
+## Frecuencias y periodos
+
+<img src='img/frec-periodos.png' width='85%' height='85%' class='centerimage'>
+
+---
+
+## Requisitos de los equipos
+
+<img src='img/equipos1.png' width='100%' height='100%' class='centerimage'>
+
+---
+
+## Requisitos de los equipos
+
+<img src='img/equipos2.png' width='90%' height='90%' class='centerimage'>
+
+---
+
+class: inverse, center, middle
+
+### PROCESAMIENTO DE DATOS
+
+---
+
+## Limpieza de datos
+
+<img src='img/dataclean.png' width='100%' height='100%' class='centerimage'>
+
+---
+
+## Limpieza de datos
+
+<img src='img/qc1.png' width='90%' height='90%' class='centerimage'>
+
+---
+
+## Cálculos aritméticos
+
+<img src='img/qc2.png' width='90%' height='90%' class='centerimage'>
+
+---
+
+## Cálculos aritméticos
+
+<img src='img/qc3.png' width='90%' height='90%' class='centerimage'>
+
+---
+
+## Cálculos aritméticos
+
+<img src='img/qc4.png' width='90%' height='90%' class='centerimage'>
 
 
-## Instrucción "next"
+---
 
-- La instrucción "next" nos permite omitir una interacción en un bucle cuando se cumple determinada condición.
+## El paquete "openair"
 
-```{r , echo = TRUE , collapse = TRUE}
+- Son un conjunto de herramientas específicas para el análisis de datos meteorológicos y de calidad del aire de **código abierto**.
+- El proyecto [**openair**](https://bookdown.org/david_carslaw/openair/) comenzó con la financiación del Consejo de Investigación del Medio Ambiente Natural del Reino Unido (NERC) hace más de 10 años.
 
-# CREAMOS UN OBJETO PARA LA APLICACION DE LA INSTRUCCION
 
-x <- c(20,15,17,18,20,25,26,29)
-
-# CREAMOS UN VECTOR VACIO
-
-vector <- c()
-
-for (i in 1:length(x)) {
-  
-  if (i == 4){
-  next
-  }
-  
-  z <- x[i]*2
-  vector[i] <- z + i
-
-}
-
-print(vector)
-
-```
-
+<img src='img/openair1.png' width='80%' height='80%' class='centerimage'>
 
 ---
 
