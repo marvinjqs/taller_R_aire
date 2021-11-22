@@ -33,7 +33,7 @@ setwd("D:/PROYECTOS-R/taller_R_aire/script/CLASE3")
 
 library(RSelenium)
 
-#binman::list_versions("chromedriver")
+binman::list_versions("chromedriver")
 
 download_senamhi_data <- function(url_list) {
   
@@ -209,9 +209,27 @@ df <- df[!(df$VEL_V %in% out_VEL_V),]
 
 # Obtener los promedios, maximos, minimos, etc
 
-data_month <- setDT(df)[,lapply(.SD, function(x) if(length(na.omit(x)) >= 23)
-  (wd_mean(x)) else NA_real_) ,
-  by = .(month = format(day, '%m/%Y'))]
+df_2 <- df
+
+df_2$date <- seq(as.POSIXct("2019-12-31 23:00", format = "%Y-%m-%d %H:%M"), 
+                 as.POSIXct("2020-12-31 22:00", format = "%Y-%m-%d %H:%M"), 
+                 by = "1 hour") 
+
+library(data.table)
+
+data_day_mean <- setDT(df_2)[,lapply(.SD, function(x) if(length(na.omit(x)) >= 18)
+  (mean(x, na.rm = T)) else NA_real_) ,
+  by = .(day = format(date, '%d/%m/%Y'))]
+
+data_day_sum <- setDT(df_2)[,lapply(.SD, function(x) if(length(na.omit(x)) >= 18)
+  (sum(x)) else NA_real_) ,
+  by = .(day = format(date, '%d/%m/%Y'))]
+
+
+data_month_mean <- setDT(df_2)[,lapply(.SD, function(x) if(length(na.omit(x)) >= 23)
+  (mean(x, na.rm = T)) else NA_real_) ,
+  by = .(month = format(date, '%m/%Y'))]
+
 
 # ETC
 
@@ -227,7 +245,7 @@ timePlot(df, pollutant = c("TEMP", "PP", "HUM"),
          smooth = T,
          xlab = "Tiempo", ylab = "Valores", 
          main = "DATOS HIDROMETEOROLÓGICOS DE LA ESTACION CAMPO DE MARTE - 2020",
-         avg.time = "1 day")
+         avg.time = "1 hour")
 
 # GRAFICAMOS LA CORRELACION ENTRE VARIABLES
 pairs(df,
@@ -243,10 +261,10 @@ colnames(df)[6] <- "ws"
 # GRAFICAMOS LAS ROSAS DE VIENTO
 windRose(df)
 windRose(df, type = "season")
-windRose(df, type = "month")
+windRose(df, type = "week")
 
 # GRAFICAMOS LAS SERIES DE TIEMPO CON LOS DATOS DE VIENTO INCLUIDOS
-timePlot(df, pollutant = c("TEMP", "HUM"), 
+timePlot(df, pollutant = c("HUM"), 
          windflow = list(scale = 0.1, lwd = 2, col = "darkcyan"), 
          lwd = 3, group = FALSE, 
          xlab = "Tiempo", ylab = "Valores",
